@@ -25,7 +25,19 @@ const loginUserValidator = [
     .withMessage("password can't be empty")
 ];
 
+const updateProfileValidator = [
+  body("name")
+    .optional()
+    .isString()
+    .withMessage("name must be a string"),
+  body("email")
+    .optional()
+    .isEmail()
+    .withMessage("must be a valid email")
+];
+
 module.exports = {
   registerUserValidator,
-  loginUserValidator
+  loginUserValidator,
+  updateProfileValidator
 };

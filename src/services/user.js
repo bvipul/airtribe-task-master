@@ -42,5 +42,13 @@ module.exports = {
     });
 
     return user;
+  },
+
+  async getById (id) {
+    return User.findOne({
+      where: {
+        id
+      }
+    });
   }
 };
